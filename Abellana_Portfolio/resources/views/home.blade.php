@@ -8,15 +8,17 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th></th>
-                <th></th>
+                <th>Skill</th>
+                <th>Level</th>
+                <th>Percent</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($skills as $skill)
                 <tr>
-                    <td>{{ $skill ->name }}</td>
-                    <td>{{ $skill ->level }}</td>
+                    <td>{{ $skill->name }}</td>
+                    <td>{{ $skill->level }}</td>
+                    <td>{{ $skill->percent }}%</td>
                 </tr>
             @endforeach
         </tbody>

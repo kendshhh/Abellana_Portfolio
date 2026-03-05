@@ -8,4 +8,10 @@ class Experience extends Model
     use HasFactory;
     protected $table = 'experiences';
     protected $fillable = ['role', 'organization', 'description', 'year'];
+
+    protected $casts = [
+        'year' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }

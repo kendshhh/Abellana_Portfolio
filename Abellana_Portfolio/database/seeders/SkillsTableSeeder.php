@@ -10,11 +10,11 @@ class SkillsTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('skills')->insert([
-            ['name' => 'HTML', 'level' => 'Beginner'],
-            ['name' => 'CSS', 'level' => 'Beginner'],
-            ['name' => 'JavaScript', 'level' => 'Beginner'],
-            ['name' => 'PHP', 'level' => 'Beginner'],
-            ['name' => 'Laravel', 'level' => 'Beginner'],
+            ['name' => 'HTML', 'level' => 'Beginner', 'percent' => 45],
+            ['name' => 'CSS', 'level' => 'Beginner', 'percent' => 25],
+            ['name' => 'JavaScript', 'level' => 'Beginner', 'percent' => 15],
+            ['name' => 'PHP', 'level' => 'Beginner', 'percent' => 45],
+            ['name' => 'Laravel', 'level' => 'Beginner', 'percent' => 35],
         ]);
     }
 }

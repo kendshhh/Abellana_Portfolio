@@ -10,6 +10,13 @@ class Skill extends Model
 
     protected $fillable = [
         'name',
-        'level'
+        'level',
+        'percent',
+    ];
+
+    protected $casts = [
+        'percent' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 }

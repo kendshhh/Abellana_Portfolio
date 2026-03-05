@@ -6,7 +6,8 @@ use App\Models\Project;
 class ProjectController extends Controller
 {
     public function index() {
-        $projects = Project::all();
+        // fetch and deduplicate by title (same content may have different ids)
+        $projects = Project::all()->unique('title');
         return view('pages.projects', compact('projects'));
     }
 }

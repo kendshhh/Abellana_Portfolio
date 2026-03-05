@@ -6,7 +6,7 @@ use App\Models\Skill;
 class SkillController extends Controller
 {
     public function index() {
-        $skills = Skill::all();
+        $skills = Skill::all()->unique('name');
         return view('pages.skills', compact('skills'));
     }
 }

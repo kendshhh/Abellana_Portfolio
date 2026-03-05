@@ -6,7 +6,10 @@ use App\Models\Experience;
 class ExperienceController extends Controller
 {
     public function index() {
-        $experiences = Experience::all();
+        // remove duplicates by combining role + organization + year
+        $experiences = Experience::all()->unique(function($item) {
+            return $item->role . '|' . $item->organization . '|' . $item->year;
+        });
         return view('pages.experiences', compact('experiences'));
     }
 }

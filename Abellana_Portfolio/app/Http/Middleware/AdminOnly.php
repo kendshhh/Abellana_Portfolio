@@ -10,6 +10,18 @@ class AdminOnly
 {
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        // Log portfolio access for analytics
+        \Log::info('Portfolio accessed', [
+            'ip' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'url' => $request->fullUrl(),
+            'timestamp' => now()
+        ]);
+
+        // Add custom header for portfolio pages
+        $response = $next($request);
+        $response->headers->set('X-Portfolio-Access', 'Granted');
+
+        return $response;
     }
 }

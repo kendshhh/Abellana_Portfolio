@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('educations', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('profile_id')->nullable()->constrained('profiles')->nullOnDelete();
+            $table->string('degree');
+            $table->string('field_of_study')->nullable();
+            $table->string('institution');
+            $table->year('start_year')->nullable();
+            $table->year('end_year')->nullable();
+            $table->string('grade')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('sort_order')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('educations');
+    }
+};
