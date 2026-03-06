@@ -17,10 +17,15 @@
                 I'm <span class="gradient-text">{{ $profile->full_name }}</span>
             </h1>
 
-            <!-- Welcome Text -->
-            <p class="welcome-text mb-5">
-                Welcome to my portfolio
-            </p>
+            <!-- Profile Text -->
+            <div class="mb-5">
+                @if($profile->title)
+                    <p class="welcome-text mb-2">{{ $profile->title }}</p>
+                @endif
+                @if($profile->bio)
+                    <p class="welcome-text welcome-subtext mb-0">{{ $profile->bio }}</p>
+                @endif
+            </div>
 
             <!-- CTA Buttons -->
             <div class="d-flex gap-3">
@@ -103,6 +108,11 @@
         color: var(--color-text-muted);
         font-weight: 400;
         max-width: 500px;
+    }
+
+    .welcome-subtext {
+        font-size: 1.05rem;
+        line-height: 1.7;
     }
 
     /* Buttons */

@@ -39,7 +39,9 @@
                         <span class="badge" style="background: var(--color-pink); color: var(--color-white);" >{{ $exp->year }}</span>
                     </div>
                     <p class="fw-bold small mb-3 text-uppercase tracking-wider" style="color: var(--color-pink);">{{ $exp->organization }}</p>
-                    <p class="text-muted mb-0">Delivering high-quality solutions and technical innovation.</p>
+                    @if($exp->description)
+                        <p class="text-muted mb-0">{{ $exp->description }}</p>
+                    @endif
                 </div>
             </div>
         @endforeach

@@ -186,9 +186,9 @@
                             <span class="project-year">{{ $proj->year }}</span>
                         </div>
                         
-                        <p class="project-description">
-                            {{ $proj->description ?? 'No description available.' }}
-                        </p>
+                        @if($proj->description)
+                            <p class="project-description">{{ $proj->description }}</p>
+                        @endif
 
                         @if($proj->tech_stack)
                         <div class="tech-stack">

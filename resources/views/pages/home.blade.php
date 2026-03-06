@@ -19,9 +19,12 @@
 
             <!-- Welcome Text with animated underline -->
             <div class="welcome-wrapper mb-5">
-                <p class="welcome-text">
-                    Welcome to my portfolio
-                </p>
+                @if($profile->title)
+                    <p class="welcome-text mb-2">{{ $profile->title }}</p>
+                @endif
+                @if($profile->bio)
+                    <p class="welcome-text welcome-subtext mb-0">{{ $profile->bio }}</p>
+                @endif
                 <div class="animated-underline"></div>
             </div>
 
@@ -186,6 +189,12 @@
         max-width: 500px;
         position: relative;
         z-index: 1;
+    }
+
+    .welcome-subtext {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 560px;
     }
 
     .animated-underline {

@@ -125,12 +125,12 @@
                         <a href="{{ $contact->linkedin_url }}" target="_blank" class="contact-link fs-5">{{ $contact->linkedin_url }}</a>
                     </div>
                     
+                    @if($contact->github_url)
                     <div class="contact-item">
                         <span class="contact-label">GitHub</span>
-                        <a href="{{ $contact->github_url ?? 'https://github.com/kendshhh' }}" target="_blank" class="contact-link fs-5">
-                            {{ $contact->github_url ?? 'https://github.com/kendshhh' }}
-                        </a>
+                        <a href="{{ $contact->github_url }}" target="_blank" class="contact-link fs-5">{{ $contact->github_url }}</a>
                     </div>
+                    @endif
                     @else
                         <div class="text-center text-muted">
                             <p>No contact information available.</p>
