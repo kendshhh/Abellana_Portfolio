@@ -19,9 +19,12 @@
 
             <!-- Welcome Text with animated underline -->
             <div class="welcome-wrapper mb-5">
-                <p class="welcome-text">
-                    Welcome to my portfolio
-                </p>
+                @if($profile->title)
+                    <p class="welcome-text mb-2">{{ $profile->title }}</p>
+                @endif
+                @if($profile->bio)
+                    <p class="welcome-text welcome-subtext mb-0">{{ $profile->bio }}</p>
+                @endif
                 <div class="animated-underline"></div>
             </div>
 
@@ -42,7 +45,12 @@
         <div class="col-lg-5 mt-5 mt-lg-0 text-center" style="animation: fadeInRight 0.8s ease;">
             <div class="profile-wrapper">
                 <div class="profile-image-container">
-                    <img src="{{ asset($profile->image_url ?? 'https://via.placeholder.com/400x400') }}" 
+                    @php
+                        $profileImageSrc = $profile->image_url
+                            ? (filter_var($profile->image_url, FILTER_VALIDATE_URL) ? $profile->image_url : asset($profile->image_url))
+                            : 'https://via.placeholder.com/400x400';
+                    @endphp
+                    <img src="{{ $profileImageSrc }}" 
                          class="img-fluid profile-image" 
                          alt="Profile"
                          id="profileImage">
@@ -186,6 +194,12 @@
         max-width: 500px;
         position: relative;
         z-index: 1;
+    }
+
+    .welcome-subtext {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 560px;
     }
 
     .animated-underline {

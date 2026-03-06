@@ -6,7 +6,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\EducationController;
-use App\Models\Contact;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +21,5 @@ Route::middleware(['portfolio.access'])->group(function () {
     Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
     Route::get('/educations', [EducationController::class, 'index'])->name('educations.index');
 
-    Route::get('/contacts', function () {
-        $contact = Contact::first();
-        return view('pages.contacts', compact('contact'));
-    })->name('contacts.index');
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 });

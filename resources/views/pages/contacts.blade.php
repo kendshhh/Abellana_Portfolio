@@ -458,19 +458,21 @@
                         </div>
                     </div>
                     
-                    <!-- GitHub -->
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
+                    @if($contact->github_url)
+                        <!-- GitHub -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-content">
+                                <span class="contact-label">GitHub</span>
+                                <a href="{{ $contact->github_url }}" target="_blank" class="contact-value">
+                                    {{ $contact->github_url }}
+                                    <i class="fas fa-external-link-alt ms-2" style="font-size: 0.8rem;"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="contact-content">
-                            <span class="contact-label">GitHub</span>
-                            <a href="{{ $contact->github_url ?? 'https://github.com/kendshhh' }}" target="_blank" class="contact-value">
-                                {{ $contact->github_url ?? 'https://github.com/kendshhh' }}
-                                <i class="fas fa-external-link-alt ms-2" style="font-size: 0.8rem;"></i>
-                            </a>
-                        </div>
-                    </div>
+                    @endif
                 </div>
             @else
                 <!-- Empty State - Matching projects page -->

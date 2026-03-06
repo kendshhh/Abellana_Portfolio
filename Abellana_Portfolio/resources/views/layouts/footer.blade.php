@@ -5,14 +5,10 @@
             <!-- About Section -->
             <div class="col-lg-4" data-aos="fade-up">
                 <h5 class="mb-3 gradient-text">About This Portfolio</h5>
-                <p class="mb-3 text-light">
-                    A showcase of my journey in software development, featuring projects, skills, and experiences
-                    that demonstrate my passion for creating innovative solutions.
-                </p>
+                @if($profile && $profile->bio)
+                    <p class="mb-3 text-light">{{ $profile->bio }}</p>
+                @endif
                 <div class="social-links">
-                    @php
-                        $contact = \App\Models\Contact::first();
-                    @endphp
                     @if($contact)
                         @if($contact->github_url)
                             <a href="{{ $contact->github_url }}" class="text-light me-3" target="_blank" rel="noopener noreferrer">
@@ -73,9 +69,6 @@
             <!-- Contact Info -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <h5 class="mb-3 gradient-text">Get In Touch</h5>
-                @php
-                    $contact = \App\Models\Contact::first();
-                @endphp
                 @if($contact)
                     <div class="contact-info">
                         @if($contact->email)
@@ -106,9 +99,6 @@
         <!-- Copyright -->
         <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
         <div class="text-center">
-            @php
-                $profile = \App\Models\Home::first();
-            @endphp
             <p class="mb-0 text-light">
                 &copy; {{ date('Y') }}
                 @if($profile)

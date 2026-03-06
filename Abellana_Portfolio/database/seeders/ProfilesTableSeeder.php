@@ -13,15 +13,18 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('profiles')->insert([
-            'full_name' => 'Kendra Abellana',
-            'title' => 'Full Stack Developer',
-            'bio' => 'Welcome to my portfolio',
-            'email' => 'your-email@example.com',
-            'location' => 'Your Location',
-            'image_url' => 'images/profile/kendra-profile.jpg',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
+        DB::table('profiles')->updateOrInsert(
+            ['id' => 1],
+            [
+                'full_name' => 'Kendra Abellana',
+                'title' => 'Full Stack Developer',
+                'bio' => 'I build responsive and database-driven web applications using Laravel, Bootstrap, and modern frontend tools.',
+                'email' => 'kendra.abellana@example.com',
+                'location' => 'Bacolod City, Philippines',
+                'image_url' => 'images/profile/kendra-profile.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
     }
 }
