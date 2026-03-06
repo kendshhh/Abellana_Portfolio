@@ -41,7 +41,12 @@
         <!-- Right side - Simple profile image -->
         <div class="col-lg-5 mt-5 mt-lg-0 text-center">
             <div class="profile-wrapper">
-                <img src="{{ asset($profile->image_url ?? 'https://via.placeholder.com/400x400') }}" class="img-fluid profile-image" alt="Profile">
+                @php
+                    $profileImageSrc = $profile->image_url
+                        ? (filter_var($profile->image_url, FILTER_VALIDATE_URL) ? $profile->image_url : asset($profile->image_url))
+                        : 'https://via.placeholder.com/400x400';
+                @endphp
+                <img src="{{ $profileImageSrc }}" class="img-fluid profile-image" alt="Profile">
             </div>
         </div>
     </div>
