@@ -16,3 +16,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Prevent accidental nested duplicate Laravel apps in this repo root.
+/Abellana_Portfolio/
+/laravel/
