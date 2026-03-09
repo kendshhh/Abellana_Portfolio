@@ -16,7 +16,7 @@ class ExperiencesTableSeeder extends Seeder
             [
                 'role' => 'Vice Mayor',
                 'organization' => 'Classroom',
-                'description' => 'Developed full-stack web applications, led API integrations, and optimized performance.',
+                'description' => 'Assists the Classroom Mayor in leading the class, coordinating activities, and ensuring that classroom responsibilities are fulfilled.',
                 'year' => '2025',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -24,7 +24,7 @@ class ExperiencesTableSeeder extends Seeder
              [
                 'role' => 'Executive Secretary',
                 'organization' => 'Amazon Web Services Learning Club - USLS',
-                'description' => 'Developed full-stack web applications, led API integrations, and optimized performance.',
+                'description' => 'Manages documentation, records meeting minutes, and handles official communications for the learning club.',
                 'year' => '2024',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -32,7 +32,7 @@ class ExperiencesTableSeeder extends Seeder
             [
                 'role' => 'Class Mayor',
                 'organization' => 'Classroom',
-                'description' => 'Built responsive interfaces with accessibility in mind and collaborated with designers.',
+                'description' => 'Leads the class by representing students, organizing activities, and ensuring coordination between classmates and teachers.',
                 'year' => '2024',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -40,7 +40,7 @@ class ExperiencesTableSeeder extends Seeder
             [
                 'role' => 'Budget and Finance Undersecretary',
                 'organization' => 'Computer Science Society - USLS',
-                'description' => 'Built responsive interfaces with accessibility in mind and collaborated with designers.',
+                'description' => 'Supports the finance team in managing budgets, tracking expenses, and assisting in financial planning for organizational activities.',
                 'year' => '2023',
                 'created_at' => now(),
                 'updated_at' => now(),

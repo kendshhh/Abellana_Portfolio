@@ -18,7 +18,7 @@ class ProjectsTableSeeder extends Seeder
         \DB::table('projects')->insert([
             [
                 'title' => 'Anti-Corruption Procurement Monitoring System',
-                'description' => 'AA machine-learning–powered system that tracks procurement items, detects overpriced materials using marketplace data, ensures transparency, and motivates users through structured gamification elements to promote accuracy, timely reporting, and compliance.',
+                'description' => 'A machine-learning–powered system that tracks procurement items, detects overpriced materials using marketplace data, ensures transparency, and motivates users through structured gamification elements to promote accuracy, timely reporting, and compliance.',
                 'tech_stack' => 'PhP, MySQL, Bootstrap, Css, JavaScript',
                 'year' => '2026',
                 'image_url' => 'images/projects/project1.jpg',
@@ -41,7 +41,7 @@ The goal of TamBayani is to turn idle time into productive opportunities, helpin
             [
                 'title' => 'Trust Ledger',
                 'description' => 'The system acts as a digital ledger that automatically calculates your fathers net balance by tracking every deposit and withdrawal you enter. It ensures complete transparency by assigning unique reference IDs to transactions and requiring a detailed narrative to explain the purpose of each move. All data is stored locally in your browser, providing a professional, high-contrast dashboard for real-time financial oversight.',
-                'tech_stack' => 'Solidity,Ethereum,JavaScript',
+                'tech_stack' => 'PhP, MySQL, Bootstrap, Css, JavaScript',
                 'year' => '2024',
                 'image_url' => 'images/projects/project3.jpg',
                 'created_at' => now(),
