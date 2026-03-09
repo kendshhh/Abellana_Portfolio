@@ -18,6 +18,12 @@ class AdminOnly
             'timestamp' => now()
         ]);
 
+        // Simple restriction rule for demo/audit purposes.
+        // Visiting any portfolio route with ?blocked=1 returns a custom message.
+        if ($request->query('blocked') === '1') {
+            return response('Portfolio access blocked by middleware policy.', 403);
+        }
+
         // Add custom header for portfolio pages
         $response = $next($request);
         $response->headers->set('X-Portfolio-Access', 'Granted');
